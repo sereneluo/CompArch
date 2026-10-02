@@ -1,4 +1,4 @@
-filename = top
+filename = hsv_pwm
 pcf_file = iceBlinkPico.pcf
 
 build:
@@ -9,5 +9,9 @@ build:
 prog: #for sram
 	dfu-util --device 1d50:6146 --alt 0 -D $(filename).bin -R
 
+sim:
+	iverilog -g2012 -o hsv_pwm_tb hsv_pwm_tb.sv
+	vvp hsv_pwm_tb
+
 clean:
-	rm -rf $(filename).blif $(filename).asc $(filename).json $(filename).bin
+	rm -rf $(filename).blif $(filename).asc $(filename).json $(filename).bin hsv_pwm_tb hsv_pwm.vcd

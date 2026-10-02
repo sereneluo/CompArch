@@ -1,6 +1,16 @@
+# Build outputs
 *.blif
 *.json
 *.asc
 *.bin
 *.vvp
+hsv_pwm_tb
+
+# Simulation waveform (large, regenerate with `make sim`)
 *.vcd
+
+# Reference repo / toolchain / textbook — not part of the submission
+iceBlinkPico/
+oss-cad-suite/
+oss-cad-suite-darwin-arm64-*.tgz
+*.pdf
